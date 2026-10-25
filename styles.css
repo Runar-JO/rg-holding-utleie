@@ -180,14 +180,14 @@ em {
   position:absolute;
   inset:0;
   z-index:0;
-  background:url('images/stillas.jpg') center center/cover
+  background:url('images/hero-utleie.png') center 55%/cover
 }
 
 .hero:after {
   content:'';
   position:absolute;
   inset:0;
-  background:linear-gradient(90deg,rgba(8,24,44,.96),rgba(8,24,44,.75) 40%,rgba(8,24,44,.12)),linear-gradient(0deg,rgba(8,24,44,.7),transparent 35%);
+  background:linear-gradient(90deg,rgba(8,24,44,.88),rgba(8,24,44,.62) 40%,rgba(8,24,44,.08)),linear-gradient(0deg,rgba(8,24,44,.7),transparent 35%);
   z-index:1;
   pointer-events:none
 }
@@ -1093,7 +1093,7 @@ footer {
     background:linear-gradient(90deg,#08182ce8,#08182c90),linear-gradient(0deg,#08182cbd,transparent)
   }
   .hero-image {
-    background-position:60% center
+    background-position:42% center
   }
   .hero-bottom {
     flex-direction:column;
