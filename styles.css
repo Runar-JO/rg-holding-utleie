@@ -812,9 +812,21 @@ textarea {
 }
 
 input[type="date"] {
+  -webkit-appearance:none;
+  appearance:none;
+  display:block;
+  box-sizing:border-box;
+  width:100%;
   max-width:100%;
+  min-width:0;
   min-inline-size:0;
-  min-height:48px
+  min-height:48px;
+  text-align:left
+}
+
+input[type="date"]::-webkit-date-and-time-value {
+  min-height:1.5em;
+  text-align:left
 }
 
 .form-status {
