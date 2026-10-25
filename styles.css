@@ -792,7 +792,7 @@ details p {
 
 .form-row {
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:16px
 }
 
@@ -809,6 +809,12 @@ input,select,textarea {
 
 textarea {
   resize:vertical
+}
+
+input[type="date"] {
+  max-width:100%;
+  min-inline-size:0;
+  min-height:48px
 }
 
 .form-status {
@@ -1188,6 +1194,12 @@ footer {
   }
   .contact-form {
     padding:25px
+  }
+  .date-row {
+    grid-template-columns:minmax(0,1fr)
+  }
+  .date-row input {
+    font-size:16px
   }
   .contact h2 {
     font-size:56px
