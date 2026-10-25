@@ -75,9 +75,6 @@ const summary = form.querySelector(".rental-summary");
 const rentalError = form.querySelector(".rental-error");
 
 function updateRentalSummary() {
-  if (form.elements.product.value === "Stillas") {
-    endInput.value = scaffoldingEndDate(startInput.value, endInput.value);
-  }
   endInput.min = startInput.value;
   endInput.setCustomValidity("");
   endInput.removeAttribute("aria-invalid");
@@ -101,9 +98,19 @@ function updateRentalSummary() {
   document.getElementById("rental-total").textContent = currency.format(result.totalOre / 100);
 }
 
+// Do not rewrite a date while the visitor is editing it in the calendar.
+// Apply the minimum rental period only after they leave the field.
+function commitRentalDates() {
+  if (form.elements.product.value === "Stillas") {
+    endInput.value = scaffoldingEndDate(startInput.value, endInput.value);
+  }
+  updateRentalSummary();
+}
+
 for (const field of [form.elements.product, startInput, endInput]) {
   field.addEventListener("input", updateRentalSummary);
   field.addEventListener("change", updateRentalSummary);
+  field.addEventListener("blur", commitRentalDates);
 }
 window.addEventListener("pageshow", updateRentalSummary);
 updateRentalSummary();
@@ -111,7 +118,7 @@ updateRentalSummary();
 form.addEventListener("submit", (event) => event.preventDefault());
 const demoButton = form.querySelector('button[type="button"]');
 demoButton.addEventListener("click", () => {
-  updateRentalSummary();
+  commitRentalDates();
   if (!form.reportValidity()) return;
   form.querySelector(".form-status").textContent = "Forespørselen er klar som demonstrasjon. Ingen melding er sendt. Innsending kobles til når kontaktinformasjon og skjemaløsning er valgt.";
 });
