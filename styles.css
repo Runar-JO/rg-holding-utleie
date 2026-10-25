@@ -747,6 +747,16 @@ details p {
   font-size:14px
 }
 
+.contact-details a {
+  display:inline-block;
+  padding-block:5px;
+  text-decoration:underline;
+  text-underline-offset:4px;
+  text-decoration-color:var(--gold-light)
+}
+.contact-details a:hover {
+  color:var(--gold-light)
+}
 .contact-form {
   background:white;
   color:var(--ink);
