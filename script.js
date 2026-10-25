@@ -75,6 +75,9 @@ const summary = form.querySelector(".rental-summary");
 const rentalError = form.querySelector(".rental-error");
 
 function updateRentalSummary() {
+  if (form.elements.product.value === "Stillas") {
+    endInput.value = scaffoldingEndDate(startInput.value, endInput.value);
+  }
   endInput.min = startInput.value;
   endInput.setCustomValidity("");
   endInput.removeAttribute("aria-invalid");
