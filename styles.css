@@ -180,7 +180,7 @@ em {
   position:absolute;
   inset:0;
   z-index:0;
-  background:url('images/gravemaskin.jpg') center 57%/cover
+  background:url('images/stillas.jpg') center center/cover
 }
 
 .hero:after {
@@ -1093,7 +1093,7 @@ footer {
     background:linear-gradient(90deg,#08182ce8,#08182c90),linear-gradient(0deg,#08182cbd,transparent)
   }
   .hero-image {
-    background-position:62% center
+    background-position:60% center
   }
   .hero-bottom {
     flex-direction:column;
